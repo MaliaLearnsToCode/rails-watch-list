@@ -1,0 +1,10 @@
+// Specific CSS for your home-page
+.flower-bg {
+  background-image: asset-url("flowers.jpg");
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.2));
+  p {
+    margin: 50% 0;
+    position: absolute;
+  }
+}

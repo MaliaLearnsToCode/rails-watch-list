@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">MOVIELI</a>
+    <%= link_to 'New List', new_list_path, class: "btn btn-outline-success my-2 my-sm-0 ms-2" %>
+    <%= link_to 'My Lists', lists_path, class: "btn btn-outline-success my-2 my-sm-0 ms-2" %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="ms-auto flex">
+        <form class="d-flex my-2 my-lg-0">
+          <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search" value="">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<p>--------------------------------------This is going to be a banner----------------------------------</p>
+<br>
+<h1>Specific List</h1>
+<p>Classic</p>
+<%= link_to "Create a movie list", new_list_path%>
+<br>
+<p>--------------------------------------This is going to be a banner----------------------------------</p>
+
+<div class="container w-100">
+
+  <div id="list">
+    <% @bookmarks.each do |bookmark| %>
+      <div class="card-movies">
+        <%= image_tag "window.jpg", alt: "Window Movie", width: 200 %>
+        <li><%= link_to bookmark.movie.title, list_path(bookmark.movie), class:"text-decoration-none bold" %></li>
+        <li class="text-decoration-none bold"><%= bookmark.movie.overview  %></li>
+        <li class="text-decoration-none bold"><%= bookmark.comment  %></li>
+        <li class="text-decoration-none bold"><%= bookmark.movie.rating  %></li>
+        <li><%= link_to "delete", list_path(@list), class:"text-decoration-none bold" %></li>
+      </div>
+    <% end %>
+  </div>
+
+</div>
